@@ -1,6 +1,5 @@
-# Projet_PosteDeTravail
+# Version 1 :
 
-Version 1 :
 Cette version permet de récupérer les données météorologiques d'une ville passée en arguments.
 Donc dans un premier dans j'aie réaliser les étapes de codages pour vérifier si la ville était bien en arguments. Pour cela, j'ai réalisé un If en trois partis la première qui s'il n'y a pas d'argument la ville de Toulouse passe directement en arguments. Puis dans une seconde parti qui prend l'argument et qui le stock dans une variable ville.
 
