@@ -11,14 +11,10 @@ fi
 curl -s wttr.in/$ville?format=j2 > local.txt
 
 #récupération température actuelle
-tempact=$(curl -s wttr.in/$ville?format="%t")
-if [ "${tempact:0:1}" = "+" ]
-then
-    tempact=$(echo $tempact | cut -c 2-)
-fi
+tempact=$(grep -oE '"temp_C": "[0-9]+"' local.txt | grep -oE '[0-9]+')°C
 
 #récupération température du lendemain
-templen=$(head -n 103 local.txt | tail -n 1 | grep -oE "\-*[0-9]*")°C
+templen=$(grep -oE '"avgtempC": "[0-9]+"' local.txt | sed -n '2p' | grep -oE '[0-9]+')°C
 
 #meteo en une ligne
 heure=$(date +"%H:%M")
