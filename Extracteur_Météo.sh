@@ -7,7 +7,7 @@ then
     ville="Toulouse"
 elif [ $# -ne 1 ]
 then
-    echo "Usage : ./scriptv2.sh <Ville>"
+    echo "Usage : ./Extracteur_Météo.sh <Ville>"
     exit 1
 else
     ville=$1
