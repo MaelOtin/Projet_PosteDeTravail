@@ -1,0 +1,30 @@
+#!/bin/bash
+
+# Default city if no argument is provided
+DEFAULT_CITY="Paris"
+
+# Use the provided city or fallback to the default city
+VILLE="${1:-$DEFAULT_CITY}"
+FICHIER_TEMP="meteo_raw.txt"
+FICHIER_RESULTAT="meteo.txt"
+DATE=$(date "+%Y-%m-%d")
+HEURE=$(date "+%H:%M")
+
+# 1. Use curl to fetch raw weather data
+curl -s "wttr.in/$VILLE?format=%t\n%T" -o $FICHIER_TEMP
+
+# 2. Extract current temperature and next day's forecast
+TEMP_ACTUELLE=$(sed -n '1p' $FICHIER_TEMP)  # First line: current temperature
+TEMP_PREVISION=$(sed -n '2p' $FICHIER_TEMP) # Second line: next day's forecast
+
+# 3. Verify if data is available
+if [ -z "$TEMP_ACTUELLE" ] || [ -z "$TEMP_PREVISION" ]; then
+    echo "Erreur : Impossible de récupérer les données météorologiques pour $VILLE."
+    exit 1
+fi
+
+# 4. Format and save information to meteo.txt
+echo "$DATE - $HEURE - $VILLE : $TEMP_ACTUELLE - $TEMP_PREVISION" >> $FICHIER_RESULTAT
+
+# Confirmation message
+echo "Les informations météorologiques pour $VILLE ont été sauvegardées dans $FICHIER_RESULTAT."
