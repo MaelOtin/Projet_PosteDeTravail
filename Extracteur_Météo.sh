@@ -1,5 +1,3 @@
-##################User 1 ###################
-
 #! /bin/sh
 #vérification nombre de paramètres
 if [ $# -eq 0 ]
