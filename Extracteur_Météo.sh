@@ -1,32 +1,17 @@
 #!/bin/bash
 
-# Vérifier si un argument est passé
-if [ -z "$1" ]; then
-    echo "Usage: $0 [ville]"
-    exit 1
-fi
+echo "Veuillez entrer le nom d'une ville :"
+read nom_ville
 
-VILLE=$1
-FICHIER_TEMP="meteo_raw.txt"
-FICHIER_RESULTAT="meteo.txt"
-DATE=$(date "+%Y-%m-%d")
-HEURE=$(date "+%H:%M")
+#Recup de la meteo actuelle
+temperature_aujourdhui=$(curl -s "wttr.in/$nom_ville?format=%t")
 
-# 1. Utiliser curl pour récupérer les données météorologiques brutes
-curl -s "wttr.in/$VILLE?format=%t\n%T" -o $FICHIER_TEMP
+#Recup prevision demain
+temperature_demain=$(curl -s "wttr.in/$nom_ville?format=%t&tomorrow")
 
-# 2. Extraire les informations de température actuelle et prévision pour le lendemain
-TEMP_ACTUELLE=$(sed -n '1p' $FICHIER_TEMP)  # Première ligne : température actuelle
-TEMP_PREVISION=$(sed -n '2p' $FICHIER_TEMP) # Deuxième ligne : prévision du lendemain
+#Date et heure 
+jour_actuel=$(date '+%Y-%m-%d')
+heure_actuelle=$(date '+%H:%M')
 
-# 3. Vérifier si les données sont disponibles
-if [ -z "$TEMP_ACTUELLE" ] || [ -z "$TEMP_PREVISION" ]; then
-    echo "Erreur : Impossible de récupérer les données météorologiques pour $VILLE."
-    exit 1
-fi
-
-# 4. Formater et enregistrer les informations dans meteo.txt
-echo "$DATE - $HEURE - $VILLE : $TEMP_ACTUELLE - $TEMP_PREVISION" >> $FICHIER_RESULTAT
-
-# Afficher un message de confirmation
-echo "Les informations météorologiques pour $VILLE ont été sauvegardées dans $FICHIER_RESULTAT."
+#Enregistrer les infos 
+echo "$jour_actuel - $heure_actuelle - $nom_ville : $temperature_aujourdhui - $temperature_demain" >> meteo.txt
