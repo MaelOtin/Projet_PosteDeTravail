@@ -3,9 +3,6 @@
 if [ $# -eq 0 ]; then
     echo "Veuillez spécifier une ville en argument. Exemple : ./Extracteur_Météo.sh <Ville>"
     exit 1
-elif [ $# -ne 1 ]; then
-    echo "Usage : ./Extracteur_Météo.sh <Ville>"
-    exit 1
 else
     ville=$1
 fi
