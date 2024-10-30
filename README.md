@@ -4,7 +4,7 @@ Ce projet contient plusieurs versions d'un script d'extraction de données mét�
 Chaque version enregistre des informations météorologiques dans un fichier, en utilisant une ville spécifiée en paramètre ou une ville par défaut.
 
 ### 🟢 Version 1 : Extracteur_Météo_v1.sh
-Description
+**Description**
 Cette version nécessite que l’utilisateur fournisse le nom d'une ville comme argument lors de l'exécution. Si aucun argument n'est spécifié, le script affiche un message d'erreur et se termine sans extraire de données.
 
 **Fonctionnalités :**
@@ -16,7 +16,7 @@ Enregistre la date, l’heure et la température actuelle dans le fichier meteo.
 Exemple d'utilisation :
 
 
-./Extracteur_Météo_v1.sh <Ville
+./Extracteur_Météo_v1.sh <Ville>
                            
 ### 🟢 Version 2 : Extracteur_Météo_v2.sh
 **Description**
