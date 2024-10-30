@@ -33,6 +33,7 @@ Enregistre les informations avec la date et l’heure dans meteo.txt.
 Exemple d'utilisation :
 
 ./Extracteur_Météo_v2.sh            # Utilise Toulouse par défaut
+
 ./Extracteur_Météo_v2.sh Paris       # Utilise Paris comme ville
 
 ### 🟢 Version 3 : Extracteur_Météo_v3.sh
@@ -47,10 +48,12 @@ Utilise "Toulouse" par défaut si aucune ville n'est spécifiée.
 Extrait la température actuelle et la température moyenne du lendemain.
 Enregistre les données dans un fichier journalier nommé meteo_YYYYMMDD.txt (selon la date actuelle).
 Écrit également les données dans meteo.txt pour un suivi global.
+
 Exemple d'utilisation :
 
 
 ./Extracteur_Météo_v3.sh            # Utilise Toulouse par défaut
+
 ./Extracteur_Météo_v3.sh Marseille   # Utilise Marseille comme ville
 
 Pré-requis
@@ -89,6 +92,7 @@ Cette version alternative utilise "Toulouse" comme ville par défaut si aucun pa
 #### Exemple d'utilisation :
 
 ./Extracteur_Météo_v1_alternative.sh        # Utilise Toulouse par défaut
+
 ./Extracteur_Météo_v1_alternative.sh Paris   # Utilise Paris comme ville
 
 ### 🟢 Version 2 Alternative : Extracteur_Météo_v2_alternative.sh
@@ -108,6 +112,7 @@ Enregistrement des informations dans meteo.txt si le format texte est sélection
 **Exemple d'utilisation :**
 
 ./Extracteur_Météo_v2_alternative.sh Marseille          # Enregistre les données en texte
+
 ./Extracteur_Météo_v2_alternative.sh -json Marseille    # Enregistre les données en JSON
 
 ### 🟢 Version 3 Alternative : Extracteur_Météo_v3_alternative.sh
@@ -125,6 +130,7 @@ Enregistrement dans un fichier de suivi global (meteo.txt) pour un suivi continu
 Exemple d'utilisation :
 
 ./Extracteur_Météo_v3_alternative.sh                # Utilise Toulouse par défaut
+
 ./Extracteur_Météo_v3_alternative.sh Lyon           # Utilise Lyon comme ville
 
 Pré-requis
