@@ -5,6 +5,7 @@ Chaque version enregistre des informations météorologiques dans un fichier, en
 
 ### 🟢 Version 1 : Extracteur_Météo_v1.sh
 **Description**
+
 Cette version nécessite que l’utilisateur fournisse le nom d'une ville comme argument lors de l'exécution. Si aucun argument n'est spécifié, le script affiche un message d'erreur et se termine sans extraire de données.
 
 **Fonctionnalités :**
@@ -19,7 +20,9 @@ Exemple d'utilisation :
 ./Extracteur_Météo_v1.sh <Ville>
                            
 ### 🟢 Version 2 : Extracteur_Météo_v2.sh
+
 **Description**
+
 Cette version utilise "Toulouse" comme ville par défaut si aucun argument n'est fourni. Les données sont extraites, traitées et enregistrées dans meteo.txt.
 
 **Fonctionnalités :**
@@ -35,6 +38,7 @@ Exemple d'utilisation :
 ### 🟢 Version 3 : Extracteur_Météo_v3.sh
 
 **Description**
+
 Cette version enregistre la météo à la fois dans un fichier journalier et dans meteo.txt pour un suivi global. Elle est similaire à la version 2 mais ajoute un fichier d'historique journalier.
 
 **Fonctionnalités :**
@@ -54,12 +58,13 @@ Connexion Internet pour accéder à wttr.in.
 curl installé sur le système.
 
 **Notes**
+
 Ces scripts utilisent le format JSON pour récupérer et traiter les données météorologiques.
 Les erreurs de connexion à wttr.in ne sont pas gérées dans les versions 1 et 2 mais peuvent être ajoutées pour une meilleure gestion des erreurs dans les futures versions.
 
 # **Extracteur Météo - Versions Alternatives**
 
-## Description du Projet
+## Description des versions alternatives
 
 Ce projet contient plusieurs versions alternatives d'un script pour extraire des données météorologiques de [wttr.in](https://wttr.in/). 
 
@@ -69,10 +74,12 @@ Ce projet contient plusieurs versions alternatives d'un script pour extraire des
 
 ### 🟢 Version 1 Alternative : `Extracteur_Météo_v1_alternative.sh`
 
-**Description**  
+**Description**
+
 Cette version alternative utilise "Toulouse" comme ville par défaut si aucun paramètre n’est fourni. Elle extrait les données météorologiques actuelles et les prévisions du lendemain pour une ville donnée, et les enregistre dans deux fichiers : un fichier journalier et un fichier de suivi global (`meteo.txt`).
 
 **Fonctionnalités** :
+
 - Utilisation de "Toulouse" par défaut si aucun paramètre n’est fourni.
 - Extraction des informations actuelles : température, vitesse du vent, taux d'humidité, et visibilité.
 - Extraction des prévisions pour le lendemain.
@@ -85,7 +92,9 @@ Cette version alternative utilise "Toulouse" comme ville par défaut si aucun pa
 ./Extracteur_Météo_v1_alternative.sh Paris   # Utilise Paris comme ville
 
 ### 🟢 Version 2 Alternative : Extracteur_Météo_v2_alternative.sh
+
 **Description**
+
 Cette version permet d'extraire les données météorologiques dans deux formats : texte ou JSON. En spécifiant -json comme premier argument, le script enregistre les données dans un fichier JSON structuré ; sans cette option, il utilise le format texte par défaut.
 
 **Fonctionnalités :**
@@ -104,6 +113,7 @@ Enregistrement des informations dans meteo.txt si le format texte est sélection
 ### 🟢 Version 3 Alternative : Extracteur_Météo_v3_alternative.sh
 
 **Description**
+
 Cette version améliore la gestion des erreurs en ajoutant un fichier de log (meteo_error.log) pour enregistrer les erreurs de connexion avec des timestamps. Si la connexion à wttr.in échoue, le script consigne l'erreur dans le log, avec l'heure et la date, sans tenter d'extraire d'autres données.
 
 **Fonctionnalités :**
