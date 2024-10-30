@@ -17,7 +17,7 @@ Enregistre la date, l’heure et la température actuelle dans le fichier meteo.
 Exemple d'utilisation :
 
 
-./Extracteur_Météo_v1.sh <Ville>
+./Extracteur_Météo_v1.sh "Nom_Ville"
                            
 ### 🟢 Version 2 : Extracteur_Météo_v2.sh
 
