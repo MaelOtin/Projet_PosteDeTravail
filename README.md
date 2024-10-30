@@ -1,4 +1,4 @@
-# README **Extracteur Météo **
+# README **Extracteur Météo**
 
 Ce projet contient plusieurs versions d'un script d'extraction de données météo depuis le service en ligne wttr.in.
 Chaque version enregistre des informations météorologiques dans un fichier, en utilisant une ville spécifiée en paramètre ou une ville par défaut.
